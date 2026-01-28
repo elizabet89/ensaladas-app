@@ -54,11 +54,59 @@ function mostrarPedido() {
       detalleIngredientes = `<br><small>${item.ingredientes.join(", ")}</small>`;
     }
 
-    li.innerHTML = `
-      <strong>${item.nombre}</strong> (${item.tamaño}) - MX $${item.precio}
-      ${detalleIngredientes}
-      <button onclick="eliminarProducto(${index})">❌</button>
-    `;
+li.innerHTML = `
+  <div style="
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  ">
+    <div>
+      <strong>${item.nombre}</strong>
+    </div>
+
+    <div>
+      <strong>Tamaño:</strong> ${item.tamaño}
+    </div>
+
+    ${item.ingredientes && item.ingredientes.length ? `
+      <div>
+        <strong>Ingredientes:</strong> ${item.ingredientes.join(", ")}
+      </div>
+    ` : ""}
+    
+
+  ${item.aderezotipo ? `
+      <div>
+        <strong>aderezo:</strong> ${item.aderezotipo}
+      </div>
+    ` : ""}
+
+    ${item.aderezo ? `
+      <div>
+        <strong>revuelto/aparte:</strong> ${item.aderezo}
+      </div>
+    ` : ""}
+    
+
+    <div>
+      <button style="
+        background: #ff4d4f;
+        border: none;
+        color: white;
+        padding: 6px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      " onclick="eliminarProducto(${index})">❌ Eliminar</button>
+    </div>
+  </div>
+`;
+
+
+
     lista.appendChild(li);
   });
 
@@ -138,8 +186,16 @@ function agregarEnsaladaPersonalizada(boton) {
   const opcion = articulo.querySelector("input[type='radio']:checked");
   const precio = Number(opcion.value);
   const tamaño = opcion.parentElement.textContent.trim();
+  
+ // ✅ Capturamos el aderezo
+  const aderezoSeleccionado = articulo.querySelector("input[name='tipo_aderezo']:checked")?.value || "No seleccionado";
+  const aderezoTipo = articulo.querySelector("input[name='aderezo']:checked")?.value || "No seleccionado";
 
-  carrito.push({ nombre, precio, tamaño, ingredientes });
+
+
+
+  // ✅ Guardamos todo en el carrito
+  carrito.push({ nombre, precio, tamaño, ingredientes, aderezo: aderezoSeleccionado,aderezotipo:aderezoTipo });
   total += precio;
 
   actualizarMiniCart();
