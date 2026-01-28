@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutri Kitchen | Ensaladas Saludables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nutri Kitchen - Ensaladas saludables, para llevar o a domicilio en Mérida.">
+   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/acordeon.css">
+     <link rel="stylesheet" href="css/carrito.css">
+     <!-- Montserrat desde Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="container_body">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header_container">
+
+
+     </div>
+    
+     <div class="container_info">
+
+          <div class="caja_img">
+                 <img class="bold" src="./img/header/bold.png" alt="logotipo">
+            </div>
+    
+            <div class="container_direccion">
+                
+                   <h1 class="logo">Green Food</h1>
+                   <p class="direccion"><img src="./img/container_info/icon_direccion.svg" alt="icono_de_gps" height="17px" width="15px"></img> Calle 57-A , Fraccionamiento Reparto Granjas</p>
+                   <p class="hora_entrega"><img  class="Tiempo_entrega" src="./icon/clock-regular-full.svg" height="17px" width="17px" alt="reloj">Entrega de <b class="text_neg"> 20 a 60 minutos</b></p>
+            
+                </div>
+        
+
+           <div class="caja_detalles">
+          
+               <button onclick="openModal()" class="detalles">Informacion</button>
+         </div>
+
+          <div class="redes_sociales">
+             <i class=" icon fa-brands fa-whatsapp"></i>
+             <i class=" icon fa-brands fa-facebook"></i>
+             <i class=" icon fa-brands fa-instagram"></i>
+             <i class=" icon fa-brands fa-tiktok"></i>
+          </div>
+
+     </div>
+
+    <nav class="nav">
+        <ul class="nav_list">
+            <li class="nav_item">
+                <a  class="nav_link" href="">Ensaladas</a>
+            </li>
+             <li class="nav_item">
+                <a  class="nav_link" href="">Bebidas</a>
+            </li>
+             <li class="nav_item">
+                <a  class="nav_link" href="">Fresas con crema</a>
+            </li>
+        </ul>
+    </nav>
+
+  </header>
+  
+  
+<main class="main">
+
+
+
+    <section class="make_salad custom_salad">
+
+    <a class="back" href="./index.html"> regresar </a>
+    <h5 class="item_title">ARMA TU ENSALADA</h5>
+          
+      
+                        
+                        <p class="item_price">Elige el tamaño:</p>
+
+                        <div class="size_options">
+      <label>
+        <input type="radio" name="size_ensalada1" value="120" checked>
+        Sencillo $120
+      </label>
+      <label>
+        <input type="radio" name="size_ensalada1" value="159">
+        Para compartir $159
+      </label>
+                        </div>
+  
+    <ul class="items">
+
+         <article class="accordion ">
+
+  <!-- HEADER -->
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+
+    <div class="acordion-container">
+       <h3>Base(Lechuga incluida)</h3>
+       <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+  
+   
+  </div>
+
+  <!-- CONTENIDO OCULTO -->
+  <ul class="accordion-content">
+    
+    <li class="item">
+      <span class="item_name">Lechuga italiana</span>
+     
+    </li>
+
+ 
+
+  </ul>
+
+        </article>
+
+        <article class="accordion ingredientes">
+
+  <!-- HEADER -->
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+
+    <div class="acordion-container">
+       <h3>Ingredientes</h3>
+       <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+    <span>Seleccione 4(individual) o 5(grande)</span>
+   
+  </div>
+
+  <!-- CONTENIDO OCULTO -->
+  <ul class="accordion-content">
+    
+    <li class="item">
+      <span class="item_name">Zanahoria rallada</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+     
+    </li>
+
+    <li class="item">
+      <span class="item_name">Jícama</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+    <li class="item">
+      <span class="item_name">Cebolla Morada</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+  
+
+    <li class="item">
+      <span class="item_name">Espinaca baby</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+    <li class="item">
+      <span class="item_name">Elote</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+    <li class="item">
+      <span class="item_name">Zanahoria</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+    <li class="item">
+      <span class="item_name">Brocoli</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+    <li class="item">
+      <span class="item_name">Tomate</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+     <li class="item">
+      <span class="item_name">Campiñones</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+       <li class="item">
+      <span class="item_name">Apio</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+        <li class="item">
+      <span class="item_name">Manzana</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+      <li class="item">
+      <span class="item_name">Fresa</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+          <li class="item">
+      <span class="item_name">Queso parmesano</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+    </li>
+
+  </ul>
+
+        </article>
+
+
+          <article class="accordion" data-max="1">
+
+  <!-- HEADER -->
+ <div class="accordion-header" onclick="toggleAccordion(this)">
+
+    <div class="acordion-container">
+       <h3 >Proteina</h3>
+       <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+    <span>Seleccione 1 proteina </span>
+   
+  </div>
+
+  <!-- CONTENIDO OCULTO -->
+ <ul class="accordion-content">
+
+  <li class="item">
+    <span>Pollo a la plancha</span>
+
+    <div class="controls">
+      <button onclick="changeQty(this,-1)">-</button>
+      <span class="item_qty">0</span>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+  </li>
+
+  <li class="item">
+    <span>Pollo empanizado</span>
+
+    <div class="controls">
+      <button onclick="changeQty(this,-1)">-</button>
+      <span class="item_qty">0</span>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+  </li>
+
+  <li class="item">
+    <span>Pollo búfalo</span>
+
+    <div class="controls">
+      <button onclick="changeQty(this,-1)">-</button>
+      <span class="item_qty">0</span>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+  </li>
+
+  <li class="item">
+    <span>Pollo pimienta y limón</span>
+
+    <div class="controls">
+      <button onclick="changeQty(this,-1)">-</button>
+      <span class="item_qty">0</span>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+  </li>
+
+  <li class="item">
+    <span>Huevo</span>
+
+    <div class="controls">
+      <button onclick="changeQty(this,-1)">-</button>
+      <span class="item_qty">0</span>
+      <button onclick="changeQty(this,1)">+</button>
+    </div>
+
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+  </li>
+
+</ul>
+
+
+          </article>
+
+           <article class="accordion" data-max="1">
+
+  <!-- HEADER -->
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+
+    <div class="acordion-container">
+       <h3 >Complementos</h3>
+       <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+    <span>Seleccione 1 complemento</span>
+   
+  </div>
+
+  <!-- CONTENIDO OCULTO -->
+  <ul class="accordion-content">
+    
+    <li class="item">
+      <span>Cacahuate</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+       <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+
+    <li class="item">
+      <span>Nuez</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+       <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+      <li class="item">
+      <span>Arandanos</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+       <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+      <li class="item">
+      <span>Almendra</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+       <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+    <li class="item">
+      <span>Tiritas de tortilla</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+       <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+    <li class="item">
+      <span>Crotones</span>
+      <div class="controls">
+        <button onclick="changeQty(this,-1)">-</button>
+        <span class="item_qty">0</span>
+        <button onclick="changeQty(this,1)">+</button>
+      </div>
+       <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+
+      <li class="item">
+      <span>sin complemento</span>
+       <label class="extra">
+        <input type="checkbox" name="cubiertos">
+      </label>
+      
+    </li>
+
+  </ul>
+
+          </article>
+
+        
+          <article class="accordion" data-max="1">
+
+  <!-- HEADER -->
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+    <div class="acordion-container">
+      <h3>Aderezo</h3>
+      <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+    <span>Seleccione 1 Aderezo</span>
+  </div>
+
+  <!-- CONTENIDO OCULTO -->
+  <ul class="accordion-content">
+
+    <li class="item">
+      <span>Cesar</span>
+      <label class="extra">
+        <input type="radio" name="aderezo" value="cesar">
+      </label>
+      
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+
+    <li class="item">
+      <span>Ranch</span>
+      <label class="extra">
+        <input type="radio" name="aderezo" value="ranch">
+      </label>
+      
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+
+    <li class="item">
+      <span>Mostaza con miel</span>
+      <label class="extra">
+        <input type="radio" name="aderezo" value="mostaza_miel">
+      </label>
+      
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+
+    <li class="item">
+      <span>Vinagreta balsámica de fresa</span>
+      <label class="extra">
+        <input type="radio" name="aderezo" value="vinagreta_fresa">
+      </label>
+      
+    <label class="extra">
+      <input type="checkbox" data-extra="25">
+      Extra +$25
+    </label>
+    </li>
+
+    <li class="item">
+      <span>Sin aderezo</span>
+      <label class="extra">
+        <input type="radio" name="aderezo" value="sin_aderezo">
+      </label>
+      
+   
+    </li>
+
+  </ul>
+
+          </article>
+
+       <article class="accordion">
+
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+    <div class="acordion-container">
+      <h3>Aderezo revuelto o aparte?</h3>
+      <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+    <span>Seleccione una opción</span>
+  </div>
+
+  <ul class="accordion-content">
+
+    <li class="item">
+      <span>Aderezo revuelto</span>
+      <label class="extra">
+        <input type="radio" name="tipo_aderezo" value="revuelto" required>
+      </label>
+    </li>
+
+    <li class="item">
+      <span>Aderezo aparte</span>
+      <label class="extra">
+        <input type="radio" name="tipo_aderezo" value="aparte" required>
+      </label>
+    </li>
+
+  </ul>
+
+</article>
+
+
+<article class="accordion">
+
+  <!-- HEADER -->
+  <div class="accordion-header" onclick="toggleAccordion(this)">
+    <div class="acordion-container">
+      <h3>Cubiertos</h3>
+      <img class="arrow" src="icon/angle-down-solid-full.svg" alt="flecha">
+    </div>
+    <span>Seleccione una opción</span>
+  </div>
+
+  <!-- CONTENIDO -->
+  <ul class="accordion-content">
+
+    <li class="item">
+      <span>Con cubiertos</span>
+      <label class="extra">
+        <input type="radio" name="cubiertos" value="si" required>
+      </label>
+    </li>
+
+    <li class="item">
+      <span>Sin cubiertos</span>
+      <label class="extra">
+        <input type="radio" name="cubiertos" value="no" required>
+      </label>
+    </li>
+
+  </ul>
+
+</article>
+
+
+         
+     
+            <section class="size_selector">
+
+ 
+          
+
+    </ul>
+
+  <button onclick=" agregarEnsaladaPersonalizada(this)"  class="add_button_salad"> +</button>
+
+    
+    </section>
+
+</main>
+ 
+
+
+
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="nosotros">
+    <div class="containerpie">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        En Nutri Kitchen creemos que comer saludable no debe ser aburrido ni complicado.
+        Preparamos cada platillo con ingredientes frescos y porciones reales.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="containerpie">
+      <h2>Contacto</h2>
+      <p>📍 Mérida, Yucatán</p>
+      <p>📲 WhatsApp: 999-000-0000</p>
+      <p>📸 Instagram: @nutrikitchen</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="containerpie">
+      <p>© 2026 Nutri Kitchen - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <div id="infoModal" class="modal">
+
+  <div class="modal-box">
+
+    <!-- Header -->
+    <div class="modal-header">
+      <h2>Información</h2>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+
+    <!-- Estado -->
+    <div class="status">
+      <span class="dot"></span> Cerrado
+    </div>
+
+    <!-- Nombre y redes -->
+    <div class="brand">
+      <h3>Ensaladísimas</h3>
+      <div class="socials">
+        <img src="icon/whatsapp.svg">
+        <img src="icon/instagram.svg">
+        <img src="icon/facebook.svg">
+        <img src="icon/tiktok.svg">
+        <img src="icon/share.svg">
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div class="section">
+      <h4>Dirección</h4>
+      <p>📍 Benito Juárez 598, Industrial, 58130 Morelia, Mich., México</p>
+    </div>
+
+    <!-- Servicios -->
+    <div class="section">
+      <h4>Tipos de servicio</h4>
+      <div class="service">
+        🚴 A domicilio ✔️
+        <small>Entrega gratuita desde $700 MXN</small>
+      </div>
+      <div class="service">
+        🥡 Para llevar ✔️
+      </div>
+    </div>
+
+    <!-- Horarios -->
+    <div class="section">
+      <h4>Horarios de atención</h4>
+      <ul class="schedule">
+        <li><span>Lunes</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Martes</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Miércoles</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Jueves</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Viernes</span><span>11:00 AM - 5:00 PM</span></li>
+      </ul>
+    </div>
+
+  </div>
+      </div>
+<div id="modalAviso" class="modal">
+  <div class="modal-content">
+    <p></p>
+    <button onclick="this.closest('.modal').classList.remove('show')">
+      exediste del limite de ingredientes
+    </button>
+  </div>
+</div>
+
+
+  <!-- MODAL-->
+<div class="mini-cart" id="miniCart" style="display:none;">
+  <span id="cartCount">0 artículos</span>
+  <strong id="cartTotal">MX $0</strong>
+  <button id="btnVerPedido">Ver pedido</button>
+</div>
+
+<div class="pedido_modal" id="pedidoModal" style="display:none;">
+  <div class="pedido_content">
+    <h3>Tu pedido</h3>
+    <ul id="listaPedido"></ul>
+    <button onclick="cerrarPedido()">Cerrar</button>
+  </div>
+</div>
+
+<div id="modal-obligatorio" class="modal">
+  <div class="modal-box">
+    <h3>Selección obligatoria</h3>
+    <p>Debes seleccionar una proteína para continuar con tu pedido.</p>
+    <button onclick="cerrarModal()">Entendido</button>
+  </div>
+</div>
+
+
+<script src="https://kit.fontawesome.com/1facde8657.js" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script src="js/scrip_acordeon.js"></script>
+      <script src="js/carrito.js"></script>
+       <script src="js/modal_info.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+.accordion {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+
+  align-items: center;
+  padding: 1rem;
+  background-color: #e0f7fa;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.acordion-container{
+  display: flex;
+  justify-content: space-between;
+}
+.accordion-header:hover {
+  background-color: #b2ebf2;
+}
+
+.accordion-header h3 {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  margin: 0;
+  color: #00796b;
+}
+
+.accordion-header .arrow {
+  width: 20px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header .arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+   max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+
+  padding: 0 1rem;
+}
+
+.accordion-content.open {
+  max-height: 1000px; /* suficiente para mostrar contenido */
+  padding: 1rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controls button {
+  width: 30px;
+  height: 30px;
+  font-size: 1rem;
+  border: none;
+  background-color: #ffca28;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.controls span {
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.mini-cart {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 999;
+  min-width: 280px;
+  justify-content: space-between;
+}
+
+.mini-cart-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.btn-ver-pedido {
+  background: #7ed957; /* verde limón */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-ver-pedido:hover {
+  background: #6ac94b;
+}
+
+
+
+
+
+.size_options {
+  display: flex;
+
+  gap: 6px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.size_options label {
+  cursor: pointer;
+}
+
+.add_button {
+  background: #7ed957;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+
+.add_button_salad{
+
+  background: #7ed957;
+  border: none;
+  color: white;
+  font-size: 20px;
+
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.make_salad{
+  margin: 0 20px 0 25px;
+}
+
+.extra{
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+}
+.accordion-content{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item{
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.item_name{
+  font-size: 16px;
+}
+
+.controls{
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+  gap: 8px;
+}
+
+.controls button{
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #ffc928;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.item_qty{
+  min-width: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.extra{
+  font-size: 14px;
+  color: #555;
+  white-space: nowrap;
+}
+
+
+/* Estado bloqueado SOLO visual */
+.item.bloqueado {
+  background-color: #fafafa;
+}
+
+/* Texto apagado */
+.item.bloqueado span {
+  color: #b5b5b5;
+}
+
+/* Controles bloqueados */
+.item.bloqueado .controls {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* ✅ EXTRA SIEMPRE NORMAL */
+.item.bloqueado .extra,
+.item.bloqueado .extra * {
+  opacity: 1 !important;
+  color: #333 !important;
+  filter: none !important;
+}
+
+/* Checkbox visible */
+.item.bloqueado .extra input {
+  accent-color: #2e7d32;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Fondo oscuro */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+/* Mostrar modal */
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Caja del modal */
+.modal-content {
+  background: #ffffff;
+  padding: 24px 28px;
+  max-width: 420px;
+  width: 90%;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  animation: modalScale 0.3s ease;
+}
+
+/* Texto */
+.modal-content p {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Botón */
+.modal-content button {
+  background: #2ecc71; /* verde ensalada */
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover botón */
+.modal-content button:hover {
+  background: #27ae60;
+  transform: translateY(-2px);
+}
+
+/* Click */
+.modal-content button:active {
+  transform: scale(0.97);
+}
+
+/* Animación */
+@keyframes modalScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

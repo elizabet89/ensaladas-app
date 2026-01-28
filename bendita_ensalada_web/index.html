@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nutri Kitchen | Ensaladas Saludables</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nutri Kitchen - Ensaladas saludables, para llevar o a domicilio en Mérida.">
+  <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/acordeon.css">
+       <link rel="stylesheet" href="css/carrito.css">
+
+<!-- Montserrat desde Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="container_body">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header_container">
+
+
+     </div>
+    
+     <div class="container_info">
+
+          <div class="caja_img">
+                 <img class="bold" src="./img/header/bold.png" alt="logotipo">
+            </div>
+    
+            <div class="container_direccion">
+                
+                   <h1 class="logo">Green Food</h1>
+                   <p class="direccion"><img src="./img/container_info/icon_direccion.svg" alt="icono_de_gps" height="17px" width="15px"></img> Calle 57-A , Fraccionamiento Reparto Granjas</p>
+                   <p class="hora_entrega"><img  class="Tiempo_entrega" src="./icon/clock-regular-full.svg" height="17px" width="17px" alt="reloj">Entrega de <b class="text_neg"> 20 a 60 minutos</b></p>
+            
+                </div>
+        
+
+           <div class="caja_detalles">
+          
+               <button onclick="openModal()" class="detalles">Informacion</button>
+         </div>
+
+          <div class="redes_sociales">
+             <i class=" icon fa-brands fa-whatsapp"></i>
+             <i class=" icon fa-brands fa-facebook"></i>
+             <i class=" icon fa-brands fa-instagram"></i>
+             <i class=" icon fa-brands fa-tiktok"></i>
+          </div>
+
+     </div>
+
+    <nav class="nav">
+        <ul class="nav_list">
+            <li class="nav_item">
+                <a  class="nav_link" href="">Ensaladas</a>
+            </li>
+             <li class="nav_item">
+                <a  class="nav_link" href="">Bebidas</a>
+            </li>
+             <li class="nav_item">
+                <a  class="nav_link" href="">Fresas con crema</a>
+            </li>
+        </ul>
+    </nav>
+
+  </header>
+  
+  <!---- MAIN-->
+<main class="main">
+
+    <section class="menu_section">
+
+        <div class="menu_container">
+
+
+            <article class="menu_item">
+
+                <div class="item_details">
+
+                      <h5 class="item_title">Ensalada Francesa</h5>
+                       <p class="item_description">
+                        Lechuga orejona, pechuga de pollo, queso panela, elote, aceituna negra,
+                         brócoli, pico de gallo, bacon, Ranch light
+                      </p>
+
+                        <p class="item_price">Elige el tamaño:</p>
+
+                        <div class="size_options">
+                           <label class="tamaño">
+                            <input   type="radio" name="size_ensalada1" value="120" checked>
+                            Individual $120
+                            </label>
+                            <label class="tamaño">
+                            <input type="radio" name="size_ensalada1" value="159">
+                             P/compartir $159
+                            </label>
+                        </div>
+                </div>
+
+                <div class="item_image_wrapper">
+                  <img class="item_image" src="./img/article/ensalada3.png" alt="ensalada3">
+                   <button onclick="agregarAlCarrito(this)"  class="add_button"> +</button>
+                </div>
+                
+            </article>
+             
+             <article class="menu_item">
+
+                <div class="item_details">
+
+                      <h5 class="item_title">Ensalada Francesa</h5>
+                       <p class="item_description">
+                        Lechuga orejona, pechuga de pollo, queso panela, elote, aceituna negra,
+                         brócoli, pico de gallo, bacon, Ranch light
+                        </p>
+
+                        <p class="item_price">Elige el tamaño:</p>
+
+                        <div class="size_options">
+                           <label class="tamaño">
+                            <input   type="radio" name="size_ensalada1" value="120" checked>
+                            Individual $120
+                            </label>
+                            <label class="tamaño">
+                            <input type="radio" name="size_ensalada1" value="159">
+                             P/compartir $159
+                            </label>
+                        </div>
+                </div>
+
+                <div class="item_image_wrapper">
+                  <img class="item_image" src="./img/article/ensalada3.png" alt="ensalada3">
+                   <button onclick="agregarAlCarrito(this)"  class="add_button"> +</button>
+                </div>
+                
+            </article>
+            <article class="menu_item">
+
+                <div class="item_details">
+
+                      <h5 class="item_title">Ensalada Francesa</h5>
+                       <p class="item_description">
+                        Lechuga orejona, pechuga de pollo, queso panela, elote, aceituna negra,
+                         brócoli, pico de gallo, bacon, Ranch light
+                        </p>
+
+                        <p class="item_price">Elige el tamaño:</p>
+
+                        <div class="size_options">
+                           <label class="tamaño">
+                            <input   type="radio" name="size_ensalada1" value="120" checked>
+                            Individual $120
+                            </label>
+                            <label class="tamaño">
+                            <input type="radio" name="size_ensalada1" value="159">
+                             P/compartir $159
+                            </label>
+                        </div>
+                </div>
+
+                <div class="item_image_wrapper">
+                  <img class="item_image" src="./img/article/ensalada3.png" alt="ensalada3">
+                   <button onclick="agregarAlCarrito(this)"  class="add_button"> +</button>
+                </div>
+                
+            </article>
+            
+         
+           
+
+            <article class="menu_item last">
+                <div class="item_details">
+                    <h5 class="item_title"><a class="item_link" href="./page_make_salad.html">Arma tu ensalada</a></h5>
+                    <p class="item_description">Lechuga orejona,pechuga de pollo, queso panela,elote,aceituna negra,brocoli,pico de gallo, bacon,Ranch light</p>
+                   
+                </div>
+                <div class="item_image_wrapper">
+                    <img class="item_image" src="./img/article/ensalada3.png" alt="ensalada3">
+                   
+                </div>
+            </article>
+            
+         
+        </div>
+
+    </section>
+</main>
+
+
+
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="nosotros">
+    <div class="containerpie">
+      <h2>Sobre Nosotros</h2>
+      <p>
+        En Nutri Kitchen creemos que comer saludable no debe ser aburrido ni complicado.
+        Preparamos cada platillo con ingredientes frescos y porciones reales.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <div class="containerpie">
+      <h2>Contacto</h2>
+      <p>📍 Mérida, Yucatán</p>
+      <p>📲 WhatsApp: 999-000-0000</p>
+      <p>📸 Instagram: @nutrikitchen</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="containerpie">
+      <p>© 2026 Nutri Kitchen - Todos los derechos reservados</p>
+    </div>
+  </footer>
+ 
+    <!-- MODAL DE INFORMACION -->
+
+  <!-- <button onclick="openModal()" class="info-btn">ℹ️ Información</button>--> 
+
+      <div id="infoModal" class="modal">
+
+  <div class="modal-box">
+
+    <!-- Header -->
+    <div class="modal-header">
+      <h2>Información</h2>
+      <button class="close-btn" onclick="closeModal()">✕</button>
+    </div>
+
+    <!-- Estado -->
+    <div class="status">
+      <span class="dot"></span> Cerrado
+    </div>
+
+    <!-- Nombre y redes -->
+    <div class="brand">
+      <h3>Ensaladísimas</h3>
+      <div class="socials">
+        <img src="icon/whatsapp.svg">
+        <img src="icon/instagram.svg">
+        <img src="icon/facebook.svg">
+        <img src="icon/tiktok.svg">
+        <img src="icon/share.svg">
+      </div>
+    </div>
+
+    <!-- Dirección -->
+    <div class="section">
+      <h4>Dirección</h4>
+      <p>📍 Benito Juárez 598, Industrial, 58130 Morelia, Mich., México</p>
+    </div>
+
+    <!-- Servicios -->
+    <div class="section">
+      <h4>Tipos de servicio</h4>
+      <div class="service">
+        🚴 A domicilio ✔️
+        <small>Entrega gratuita desde $700 MXN</small>
+      </div>
+      <div class="service">
+        🥡 Para llevar ✔️
+      </div>
+    </div>
+
+    <!-- Horarios -->
+    <div class="section">
+      <h4>Horarios de atención</h4>
+      <ul class="schedule">
+        <li><span>Lunes</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Martes</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Miércoles</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Jueves</span><span>11:00 AM - 5:00 PM</span></li>
+        <li><span>Viernes</span><span>11:00 AM - 5:00 PM</span></li>
+      </ul>
+    </div>
+
+  </div>
+      </div>
+
+   <!-- MINI MODAL  -->
+<div id="miniModal" class="mini-modal">
+  <div class="mini-modal-content">
+    <p id="miniModalText"></p>
+    <button onclick="cerrarMiniModal()">OK</button>
+  </div>
+</div>
+
+  <!-- JS -->
+
+   <div class="mini-cart" id="miniCart" style="display:none;">
+  <span id="cartCount">0 artículos</span>
+  <strong id="cartTotal">MX $0</strong>
+  <button id="btnVerPedido">Ver pedido</button>
+</div>
+
+<!-- Modal pedido -->
+<div class="pedido_modal" id="pedidoModal" style="display:none;">
+  <div class="pedido_content">
+    <h3>Tu pedido</h3>
+    <ul id="listaPedido"></ul>
+    <button onclick="cerrarPedido()">Cerrar</button>
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/1facde8657.js" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/modal_info.js"></script>
+
+</body>
+</html>
