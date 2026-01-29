@@ -54,6 +54,7 @@ function mostrarPedido() {
       detalleIngredientes = `<br><small>${item.ingredientes.join(", ")}</small>`;
     }
 
+
 li.innerHTML = `
   <div style="
     display: flex;
@@ -77,20 +78,29 @@ li.innerHTML = `
         <strong>Ingredientes:</strong> ${item.ingredientes.join(", ")}
       </div>
     ` : ""}
-    
 
-  ${item.aderezotipo ? `
+    ${item.proteinas && item.proteinas.length ? `
       <div>
-        <strong>aderezo:</strong> ${item.aderezotipo}
+        <strong>Proteínas:</strong> ${item.proteinas.join(", ")}
+      </div>
+    ` : ""}
+      ${item.complemento && item.complemento.length ? `
+      <div>
+        <strong>Complemento:</strong> ${item.complemento.join(", ")}
+      </div>
+    ` : ""}
+
+    ${item.aderezotipo ? `
+      <div>
+        <strong>Aderezo:</strong> ${item.aderezotipo}
       </div>
     ` : ""}
 
     ${item.aderezo ? `
       <div>
-        <strong>revuelto/aparte:</strong> ${item.aderezo}
+        <strong>Revuelto/Aparte:</strong> ${item.aderezo}
       </div>
     ` : ""}
-    
 
     <div>
       <button style="
@@ -156,14 +166,17 @@ function agregarEnsaladaPersonalizada(boton) {
   const nombre = articulo.querySelector(".item_title").textContent;
 
   const ingredientes = [];
+  const proteinas = []; // ← Array para proteínas
+  const complemento =[];
   let seleccionado = false;
 
+  // ✅ Recorremos los items para ingredientes
   articulo.querySelectorAll(".accordion-content .item").forEach(item => {
-    const nombreIng = item.querySelector("span").textContent;
+    const nombreIng = item.querySelector(".nombre-ingrediente")?.textContent;
     const qtySpan = item.querySelector(".item_qty");
     const qty = qtySpan ? Number(qtySpan.textContent) : 0;
 
-    if (qty === 1) {
+    if (nombreIng && qty === 1) {
       seleccionado = true;
 
       let texto = nombreIng;
@@ -177,6 +190,27 @@ function agregarEnsaladaPersonalizada(boton) {
     }
   });
 
+  // ✅ Recorremos los items de proteína
+  articulo.querySelectorAll(".accordion-content .item").forEach(item => {
+    const nombreProteina = item.querySelector(".nombre-proteina")?.textContent;
+    const qtySpan = item.querySelector(".item_qty");
+    const qty = qtySpan ? Number(qtySpan.textContent) : 0;
+
+    if (nombreProteina && qty > 0) {
+      proteinas.push(`${nombreProteina} x${qty}`);
+    }
+  });
+
+  // ✅ Recorremos los items de complemento
+  articulo.querySelectorAll(".accordion-content .item").forEach(item => {
+    const nombreComplemento = item.querySelector(".nombre-complemento")?.textContent;
+    const qtySpan = item.querySelector(".item_qty");
+    const qty = qtySpan ? Number(qtySpan.textContent) : 0;
+
+    if (nombreComplemento && qty > 0) {
+      complemento.push(`${nombreComplemento} x${qty}`);
+    }
+  });
   // ⛔ obligatorio
   if (!seleccionado) {
     alert("⚠️ Debes seleccionar una opción obligatoria");
@@ -187,19 +221,26 @@ function agregarEnsaladaPersonalizada(boton) {
   const precio = Number(opcion.value);
   const tamaño = opcion.parentElement.textContent.trim();
   
- // ✅ Capturamos el aderezo
+  // ✅ Capturamos el aderezo
   const aderezoSeleccionado = articulo.querySelector("input[name='tipo_aderezo']:checked")?.value || "No seleccionado";
   const aderezoTipo = articulo.querySelector("input[name='aderezo']:checked")?.value || "No seleccionado";
 
-
-
-
   // ✅ Guardamos todo en el carrito
-  carrito.push({ nombre, precio, tamaño, ingredientes, aderezo: aderezoSeleccionado,aderezotipo:aderezoTipo });
+  carrito.push({ 
+    nombre, 
+    precio, 
+    tamaño, 
+    ingredientes, 
+    proteinas,
+    complemento,    // ← aquí se agregan las proteínas
+    aderezo: aderezoSeleccionado,
+    aderezotipo: aderezoTipo 
+  });
   total += precio;
 
   actualizarMiniCart();
 }
+
 
 
 
